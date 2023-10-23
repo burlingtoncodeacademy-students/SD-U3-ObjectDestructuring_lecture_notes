@@ -28,7 +28,14 @@ let theSimpsons = {
 *   Syntax:
     keyword { keyName, keyName } = object;
 */
+const { characters, seasons } = theSimpsons;
+// console.log(characters);
+// console.log(seasons);
 
+characters.push('Meo');
+// console.log(theSimpsons);
+characters[5] = "Moe";
+// console.log(theSimpsons);
 
 /* 
 *   Custom Keys
@@ -37,6 +44,10 @@ let theSimpsons = {
         - This doesn't change the original object
 */
 
+const { currently_running: on_air } = theSimpsons;
+console.log(on_air);
+
+console.log(Object.keys(theSimpsons));
 
 /* 
 !   Spread with Objects
@@ -56,6 +67,9 @@ const generalLocations = {
 }
 
 const locations = {
-    
+    ...simpsonsCharacters,
+    dmv: ['Patty', 'Selma'],
+    ...generalLocations
 }
 
+console.log(locations);
